@@ -22,18 +22,18 @@ class Pregunta
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="enunciado", type="string", length=600)
-     */
-    private $enunciado;
-
-    /**
      * @var integer
      *
-     * @ORM\Column(name="opcion", type="integer")
+     * @ORM\ManyToOne(targetEntity="Pregunta")
      */
-    private $opcion;
+    private $subPregunta;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="enunciado", type="string", length=500)
+     */
+    private $enunciado;
 
 
     /**
@@ -44,6 +44,29 @@ class Pregunta
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set subPregunta
+     *
+     * @param integer $subPregunta
+     * @return Pregunta
+     */
+    public function setSubPregunta($subPregunta)
+    {
+        $this->subPregunta = $subPregunta;
+
+        return $this;
+    }
+
+    /**
+     * Get subPregunta
+     *
+     * @return integer 
+     */
+    public function getSubPregunta()
+    {
+        return $this->subPregunta;
     }
 
     /**
@@ -67,28 +90,5 @@ class Pregunta
     public function getEnunciado()
     {
         return $this->enunciado;
-    }
-
-    /**
-     * Set opcion
-     *
-     * @param integer $opcion
-     * @return Pregunta
-     */
-    public function setOpcion($opcion)
-    {
-        $this->opcion = $opcion;
-
-        return $this;
-    }
-
-    /**
-     * Get opcion
-     *
-     * @return integer 
-     */
-    public function getOpcion()
-    {
-        return $this->opcion;
     }
 }

@@ -24,9 +24,16 @@ class Opcion
     /**
      * @var string
      *
-     * @ORM\Column(name="enunciado", type="string", length=255)
+     * @ORM\Column(name="enunciado", type="string", length=150)
      */
     private $enunciado;
+
+    /**
+     * @var integer
+     *
+     * @ORM\ManyToOne(targetEntity="Pregunta")
+     */
+    private $pregunta;
 
 
     /**
@@ -60,5 +67,28 @@ class Opcion
     public function getEnunciado()
     {
         return $this->enunciado;
+    }
+
+    /**
+     * Set pregunta
+     *
+     * @param integer $pregunta
+     * @return Opcion
+     */
+    public function setPregunta($pregunta)
+    {
+        $this->pregunta = $pregunta;
+
+        return $this;
+    }
+
+    /**
+     * Get pregunta
+     *
+     * @return integer 
+     */
+    public function getPregunta()
+    {
+        return $this->pregunta;
     }
 }

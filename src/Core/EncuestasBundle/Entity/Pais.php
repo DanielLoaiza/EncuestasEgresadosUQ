@@ -5,12 +5,12 @@ namespace Core\EncuestasBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Programa
+ * Pais
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Programa
+class Pais
 {
     /**
      * @var integer
@@ -24,7 +24,7 @@ class Programa
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=100)
+     * @ORM\Column(name="nombre", type="string", length=30)
      */
     private $nombre;
 
@@ -43,7 +43,7 @@ class Programa
      * Set nombre
      *
      * @param string $nombre
-     * @return Programa
+     * @return Pais
      */
     public function setNombre($nombre)
     {

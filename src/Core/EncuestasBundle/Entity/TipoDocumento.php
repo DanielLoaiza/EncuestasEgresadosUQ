@@ -5,12 +5,12 @@ namespace Core\EncuestasBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * TipoPregunta
+ * TipoDocumento
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class TipoPregunta
+class TipoDocumento
 {
     /**
      * @var integer
@@ -24,9 +24,9 @@ class TipoPregunta
     /**
      * @var string
      *
-     * @ORM\Column(name="tipo", type="string", length=25)
+     * @ORM\Column(name="nombre", type="string", length=20)
      */
-    private $tipo;
+    private $nombre;
 
 
     /**
@@ -40,25 +40,25 @@ class TipoPregunta
     }
 
     /**
-     * Set tipo
+     * Set nombre
      *
-     * @param string $tipo
-     * @return TipoPregunta
+     * @param string $nombre
+     * @return TipoDocumento
      */
-    public function setTipo($tipo)
+    public function setNombre($nombre)
     {
-        $this->tipo = $tipo;
+        $this->nombre = $nombre;
 
         return $this;
     }
 
     /**
-     * Get tipo
+     * Get nombre
      *
      * @return string 
      */
-    public function getTipo()
+    public function getNombre()
     {
-        return $this->tipo;
+        return $this->nombre;
     }
 }
